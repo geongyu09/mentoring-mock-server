@@ -1,50 +1,14 @@
-"use client";
-
-// import { loginAction } from "./action";
+import Link from "next/link";
 
 export default function Home() {
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const username = formData.get("username");
-    const password = formData.get("password");
-    console.log("Username:", username);
-
-    const data = await fetch(
-      "https://mentoring-mock-server.vercel.app/api/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      }
-    );
-    alert(JSON.stringify(data));
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
-      <input
-        // type="email"
-        type="text"
-        id="username"
-        name="username"
-        required
-        className="border"
-      />
-      <br />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-        className="border"
-      />
-      <br />
-      <button type="submit">Login</button>
-    </form>
+    <div className="w-screen h-screen bg-black flex items-center justify-center">
+      <Link
+        href="https://econovation.notion.site/1ed30b4e356c806db005fe64f07ecf00?pvs=73"
+        target="_blank"
+      >
+        <p className="text-4xl text-white">명세서 보러가기 &rarr;</p>
+      </Link>
+    </div>
   );
 }
