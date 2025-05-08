@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function middleware() {
   // 응답 객체 가져오기
   const response = NextResponse.next();
 
